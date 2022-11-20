@@ -19,6 +19,9 @@ $ gem install blorgh
 ```
 
 Finally copy migrations and run:
+```bash
+$ rails blorgh:install:migrations
+```
 
 ```bash
 $ rails db:migrate SCOPE=blorgh
