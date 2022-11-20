@@ -1,14 +1,11 @@
-# Blorgh
-Short description and motivation.
-
-## Usage
-How to use my plugin.
+# Blorgh Engine
+Example blorgh engine for your application
 
 ## Installation
 Add this line to your application's Gemfile:
 
 ```ruby
-gem "blorgh"
+gem 'blorgh', git: 'https://github.com/JamesACM-CF/blorgh.git', tag: 'LATEST_TAG'
 ```
 
 And then execute:
@@ -19,6 +16,25 @@ $ bundle
 Or install it yourself as:
 ```bash
 $ gem install blorgh
+```
+
+Finally copy migrations and run:
+
+```bash
+$ rails db:migrate SCOPE=blorgh
+```
+
+If you need to rollback `blorgh` migrations you can run:
+
+```bash
+$ rails db:migrate SCOPE=blorgh VERSION=0
+```
+
+## Usage
+Mount it in your `routes.rb` file:
+
+```ruby
+mount Blorgh::Engine, at: '/SOME_PATH', as: 'SOME NAMESPACE'
 ```
 
 ## Contributing
